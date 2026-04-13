@@ -29,6 +29,8 @@ export default function Trending() {
       .then((data) => setMovies(data.results));
   }, []);
 
+  console.log(movies);
+
   return (
     <div className="bg-black text-white px-4 md:px-10 py-6 customContainer py-20">
       <div className="relative">
@@ -58,7 +60,7 @@ export default function Trending() {
           {movies?.map((data, index) => (
             <div key={index} className="shrink-0 cursor-pointer relative">
               <img
-                src={data.poster_path}
+                src={data.backdrop_path}
                 alt={`movie-${index}`}
                 className="lg:h-70 lg:w-50 w-30 h-40 rounded-lg"
               />

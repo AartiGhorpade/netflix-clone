@@ -1,5 +1,6 @@
 import Hero from "./hero/page";
 import MarketingNavbar from "./navbar/page";
+import ReasonsToJoin from "./reasonsToJoin/page";
 import Trending from "./trending/page";
 
 export default function Marketing() {
@@ -10,7 +11,8 @@ export default function Marketing() {
     >
       <MarketingNavbar />
       <Hero />
-      <Trending />
+      {/* <Trending /> */}
+      <ReasonsToJoin />
     </section>
   );
 }

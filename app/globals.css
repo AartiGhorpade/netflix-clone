@@ -22,7 +22,11 @@ body {
 .redBtn {
   @apply bg-red-600 text-white px-4 py-1 rounded hover:bg-red-700 transition duration-300;
 }
-
+.marketingTitle {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 0%;
+}
 .text-stroke {
   -webkit-text-stroke: 1px white;
   color: black;
@@ -35,6 +39,11 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+  .marketingTitle {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+  }
 }
 
 /* ≥960px */
@@ -43,6 +52,11 @@ body {
     padding-left: 5rem;
     padding-right: 5rem;
   }
+  .marketingTitle {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+  }
 }
 
 /* ≥1280px */
@@ -50,5 +64,10 @@ body {
   .customContainer {
     padding-left: 9.25rem;
     padding-right: 9.25rem;
+  }
+  .marketingTitle {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
   }
 }
