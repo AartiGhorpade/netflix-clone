@@ -32,44 +32,59 @@ export default function Trending() {
   console.log(movies);
 
   return (
-    <div className="bg-black text-white px-4 md:px-10 py-6 customContainer py-20">
+    <div className="customContainer px-4 py-10 md:px-8 lg:px-10">
       <div className="relative">
-        <h2 className="text-xl md:text-2xl font-bold mb-4">Trending Now</h2>
+        <div className="flex items-center justify-between gap-4">
+          <h2 className="text-2xl sm:text-3xl font-bold">Trending Now</h2>
+        </div>
 
-        {/* LEFT ARROW */}
-        <button
-          onClick={() => scroll("left")}
-          className="absolute -left-2 lg:-left-8 top-1/2 -translate-y-1/2 z-2 bg-white/10 rounded-lg px-2 py-10 cursor-pointer"
-        >
-          ‹
-        </button>
+        <div className="relative mt-8 px-8 md:px-10">
+          {movies?.map((_, id) => {
+            return (
+              <div key={id}>
+                <button
+                  onClick={() => scroll("left")}
+                  className="absolute -left-4 md:-left-2 lg:-left-11 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center rounded-xl bg-[#333333] text-3xl transition hover:bg-white/20 h-40 w-8"
+                  aria-label="Scroll left"
+                >
+                  ‹
+                </button>
 
-        {/* RIGHT ARROW */}
-        <button
-          onClick={() => scroll("right")}
-          className="absolute -right-2 lg:-right-10 top-1/2 -translate-y-1/2 z-2 bg-white/10 rounded-lg px-2 py-10 cursor-pointer"
-        >
-          ›
-        </button>
+                <button
+                  onClick={() => scroll("right")}
+                  className="absolute -right-2 md:-right-2 lg:-right-11 top-1/2 z-10 -translate-y-1/2 flex items-center justify-center rounded-xl bg-[#333333] text-3xl transition hover:bg-white/20 h-40 w-8"
+                  aria-label="Scroll right"
+                >
+                  ›
+                </button>
+              </div>
+            );
+          })}
 
-        {/* SCROLL CONTAINER */}
-        <div
-          ref={scrollRef}
-          className="flex gap-10 overflow-hidden lg:pl-5 scroll-smooth mt-10"
-        >
-          {movies?.map((data, index) => (
-            <div key={index} className="shrink-0 cursor-pointer relative">
-              <img
-                src={data.backdrop_path}
-                alt={`movie-${index}`}
-                className="lg:h-70 lg:w-50 w-30 h-40 rounded-lg"
-              />
-              {/* Number */}
-              <span className="absolute bottom-0 lg:-left-6 -left-4 text-[60px] lg:text-[100px] font-bold text-black text-stroke">
-                {index + 1}
-              </span>
-            </div>
-          ))}
+          <div
+            ref={scrollRef}
+            className="mt-2 flex gap-4 overflow-x-auto px-1 pb-3 scroll-smooth snap-x snap-mandatory hide-scrollbar lg:gap-6 lg:px-2"
+          >
+            {movies.slice(0, 10)?.map((data, index) => (
+              <div
+                key={index}
+                className={`shrink-0 cursor-pointer relative snap-start px-2`}
+              >
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${data.backdrop_path}`}
+                  alt={`movie-${index}`}
+                  className="h-[180px] w-[160px] md:w-[180px] lg:w-[220px] rounded-3xl object-cover shadow-lg sm:h-[220px] md:h-[260px] lg:h-[320px]"
+                  loading="lazy"
+                />
+
+                <span
+                  className={`absolute bottom-3 -left-1 md:-left-3 text-[60px] md:text-[70px] lg:text-[120px] font-bold text-black text-stroke`}
+                >
+                  {index + 1}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

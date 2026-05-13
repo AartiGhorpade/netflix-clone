@@ -66,8 +66,17 @@ body {
     padding-right: 9.25rem;
   }
   .marketingTitle {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     line-height: normal;
   }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }

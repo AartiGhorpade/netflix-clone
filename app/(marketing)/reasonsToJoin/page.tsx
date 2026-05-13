@@ -49,11 +49,11 @@ export default function ReasonsToJoin() {
               <Image
                 src={item.imgPath}
                 alt={item.title}
-                className="lg:w-14 lg:h-14 float-end"
+                className="lg:w-14 lg:h-14 w-14 h-14 float-end"
                 width={20}
                 height={20}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-fuchsia-600 to-purple-900 mix-blend-overlay"></div>
+              {/* <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-fuchsia-600 to-purple-900 mix-blend-overlay"></div> */}
             </div>{" "}
           </div>
         ))}
